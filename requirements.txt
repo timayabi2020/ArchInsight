@@ -1,0 +1,20 @@
+# Core
+streamlit
+langchain
+openai
+python-dotenv
+
+# PDF and DOCX parsing
+PyMuPDF              # for PDF text/image extraction
+python-docx          # for DOCX support (later)
+
+# Image handling
+Pillow               # basic image processing
+opencv-python        # optional: if you want diagram classification
+
+# OCR (optional but helpful for extracting text from diagrams)
+pytesseract
+
+# Utility
+tqdm                 # for progress bars
+requests
