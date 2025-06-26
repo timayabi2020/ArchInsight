@@ -26,7 +26,7 @@ llm = ChatOpenAI(
 )
 
 # Keywords to filter pages likely containing diagrams
-diagram_keywords = ["architecture"]
+diagram_keywords = ["architecture", "diagram", "topology", "flow", "overview"]
 
 def extract_diagram_pages(pdf_file):
     text_blocks = []
@@ -37,7 +37,10 @@ def extract_diagram_pages(pdf_file):
             text = page.get_text()
             text_blocks.append((i, text))
 
-            if any(kw in text.lower() for kw in diagram_keywords):
+            has_keywords = any(kw in text.lower() for kw in diagram_keywords)
+            has_images = bool(page.get_images(full=True))
+
+            if has_keywords or has_images:
                 pix = page.get_pixmap(dpi=200)
                 image_bytes = pix.tobytes("png")
                 images.append({
