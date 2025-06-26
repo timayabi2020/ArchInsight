@@ -54,3 +54,6 @@ Alternatively, set the OPENAI_API_KEY in your system environment variables.
 ### 5. Run the App 
 
 streamlit run app.py
+
+
+[ArchInsight in action](SampleInsight.png)
