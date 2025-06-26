@@ -92,7 +92,8 @@ if uploaded_file:
         enhancer = ImageEnhance.Contrast(image)
         enhanced = enhancer.enhance(1.5)  # You can tweak between 1.2 - 2.0
 
-        st.image(enhanced, caption=caption, use_container_width=True)
+        resized = enhanced.resize((int(enhanced.width * 0.5), int(enhanced.height * 0.5)))
+        st.image(resized, caption=caption)
 
         context_text = text_blocks[page][1]
         with st.spinner(f"Summarizing context for {caption}..."):
