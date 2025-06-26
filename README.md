@@ -56,4 +56,6 @@ Alternatively, set the OPENAI_API_KEY in your system environment variables.
 streamlit run app.py
 
 
-[ArchInsight in action](SampleInsight.png)
+<p align="center">
+  <img src="SampleInsight.png" width="800" alt="ArchInsight in action">
+</p>
